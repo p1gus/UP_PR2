@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Читатели</title>
+</head>
+<body th:align="center">
+<h1>Все читатели</h1>
+
+<div th:each="ooda : ${chitateli}">
+    <h3>----------------------------------------------------------------</h3>
+    <h3 th:text="${'Имя: '+ooda.name}"></h3>
+    <h3 th:text="${'Фамилия: '+ooda.fam}"></h3>
+    <h4 th:text="${'Оклад: '+ooda.oklad}"></h4>
+    <h4 th:text="${'Количество прочитанных статей: '+ooda.kolvostat}"></h4>
+    <h4 th:text="${'Дата рождения: '+ooda.denroj}"></h4>
+</div>
+<button>
+    <a href="/chitateli/filter">Поиск читателей</a>
+</button>
+<br>
+<button>
+    <a href="/chitateli/add">Добавить читателя</a>
+</button>
+<br>
+<button>
+    <a onclick="javascript:history.back(-2); return false;">Назад</a>
+</button>
+</body>
+</html>
+<style>
+    html *{
+        font-family: Arial !important;
+    }
+    a{
+        text-decoration: none;
+    }
+    button{
+        font-size: 25px;
+        width: 220px;
+        height: 65px;
+        margin-top: 20px;
+        background-color: dimgray;
+        border-radius: 15px;
+    }
+</style>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Поиск журналистов</title>
+</head>
+<body  th:align="center">
+<h1>Поиск журналистов</h1>
+<form method="post" th:action="${'/jornalisti/filter/result'}">
+    <h2>Обычный поиск</h2>
+  <input type="text" name="fam">
+
+  <div th:each="el : ${result}">
+    <h3 th:text="${'Фамилиля журналиста: '+el.getFam()}"></h3>
+    <h3 th:text="${'Имя журналиста: '+el.getName()}"></h3>
+  </div>
+
+    <button type="submit">Найти</button>
+    <br>
+
+</form>
+
+<form method="post" th:action="${'/jornalisti/filter/tochresult'}">
+    <h2>Точный поиск</h2>
+    <input type="text" name="fam">
+
+    <div th:each="el : ${tochresult}">
+        <h3 th:text="${'Фамилиля журналиста: '+el.getFam()}"></h3>
+        <h3 th:text="${'Имя журналиста: '+el.getName()}"></h3>
+    </div>
+
+    <button type="submit">Найти</button>
+</form>
+<button>
+    <a onclick="javascript:history.back(-2); return false;">Назад</a>
+</button>
+
+</body>
+</html>
+<style>
+    html *{
+        font-family: Arial !important;
+    }
+    a{
+        text-decoration: none;
+    }
+    input{
+        width: 205px;
+        height: 55px;
+        margin-top: 20px;
+        background-color: silver;
+        border-radius: 15px;
+    }
+    button{
+        font-size: 25px;
+        width: 100px;
+        height: 50px;
+        margin-top: 20px;
+        background-color: dimgray;
+        border-radius: 15px;
+    }
+</style>

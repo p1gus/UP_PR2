@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Поиск статей</title>
+</head>
+<body  th:align="center">
+<h2>Поиск статей</h2>
+<form method="post" th:action="${'/blog/filter/result'}">
+    <input type="text" name="title">
+
+    <div th:each="el : ${result}">
+        <h3 th:text="${'Название статьи: '+el.title}"></h3>
+        <h3 th:text="${'Дата выхода: '+el.datavihoda}"></h3>
+        <h3 th:text="${'Часы: '+el.hours}"></h3>
+        <h3 th:text="${'Цена статьи: '+el.cenastat}"></h3>
+        <h4 th:text="${'Текст: '+el.full_text}"></h4>
+    </div>
+    <br>
+    <button type="submit">Найти</button>
+    <br>
+    <button>
+        <a onclick="javascript:history.back(-2); return false;">Назад</a>
+    </button>
+</form>
+<!--<form th:action=" '/blog/filter/' + ${el.id} + '/remove'" method="post">-->
+<!--  <button type="submit" class="btn btn-del">Удалить</button>-->
+<!--  <button>-->
+<!--    <a th:href=" '/blog/' + ${el.id}">Подробнее</a>-->
+<!--  </button>-->
+<!--</form>-->
+</body>
+</html>
+<style>
+    html *{
+        font-family: Arial !important;
+    }
+    a{
+        text-decoration: none;
+    }
+    a:hover{
+        color:#335;
+    }
+    button{
+
+        font-size: 25px;
+        width: 250px;
+        height: 50px;
+        margin-top: 20px;
+        background-color: dimgray;
+        border-radius: 15px;
+    }
+    input{
+        width: 205px;
+        height: 55px;
+        margin-top: 20px;
+        background-color: silver;
+        border-radius: 15px;
+    }
+</style>

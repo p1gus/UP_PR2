@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Добавление новой статьи</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body  th:align="center">
+<h1>Добавление новой статьи</h1>
+<form th:action="${'/blog/add'}" method="post">
+  <input type="text" name="title" placeholder="Введите название статьи">
+  <br>
+  <input type="date" name="datavihoda" placeholder="Введите анос статьи">
+  <br>
+  <textarea name="full_text" placeholder="Введите текст статьи"></textarea>
+  <br>
+  <input type="text" name="cenastat" placeholder="Введите цену статьи">
+  <br>
+  <input type="text" name="hours" placeholder="Введите часы прочтения">
+  <br>
+  <button type="submit">Добавить статью</button>
+  <br>
+  <button>
+    <a onclick="javascript:history.back(-2); return false;">Назад</a>
+  </button>
+</form>
+</body>
+</html>
+<style>
+  html *{
+    font-family: Arial !important;
+  }
+  a{
+    text-decoration: none;
+  }
+  a:hover{
+    color:#335;
+  }
+  button{
+
+    font-size: 25px;
+    width: 250px;
+    height: 50px;
+    margin-top: 20px;
+    background-color: dimgray;
+    border-radius: 15px;
+  }
+  input{
+    width: 205px;
+    height: 55px;
+    margin-top: 20px;
+    background-color: silver;
+    border-radius: 15px;
+  }
+  textarea{
+    width: 205px;
+    height: 55px;
+    margin-top: 20px;
+    background-color:  silver;
+    border-radius: 15px;
+  }
+</style>

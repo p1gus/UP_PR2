@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Публикации</title>
+</head>
+<body  th:align="center">
+<h1>Публикации</h1>
+
+
+<div th:each="ooda : ${posts}">
+        <h3><p>----------------------------------------------------------------</p></h3>
+        <h3 th:text="${'Название статьи: '+ooda.title}"></h3>
+        <h3 th:text="${'Дата выхода: '+ooda.datavihoda}"></h3>
+        <h4 th:text="${'Текст статьи: '+ooda.full_text}"></h4>
+        <h3 th:text="${'Часы прочтения: '+ooda.hours}"></h3>
+        <h4 th:text="${'Цена статьи: '+ooda.cenastat}"></h4>
+</div>
+
+<button>
+    <a href="/blog/filter">Поиск статьи</a>
+</button>
+<br>
+<button>
+    <a href="/blog/add">Добавить статью</a>
+</button>
+<br>
+<button>
+    <a onclick="javascript:history.back(-2); return false;">Назад</a>
+</button>
+
+
+</body>
+</html>
+<style>
+    html *{
+        font-family: Arial !important;
+    }
+    a{
+        text-decoration: none;
+    }
+    button{
+        font-size: 25px;
+        width: 220px;
+        height: 40px;
+        margin-top: 20px;
+        background-color: dimgray;
+        border-radius: 15px;
+    }
+</style>

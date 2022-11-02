@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Добавление читателей</title>
+</head>
+<body  th:align="center">
+<h1>Добавить читателя</h1>
+<form th:action="${'/chitateli/add'}" method="post">
+    <input type="text" name="name" placeholder="Введите имя читателя">
+    <input type="text" name="fam" placeholder="Введите фамилию читателя">
+    <input type="number" name="kolvostat" placeholder="Введите количество прочитанных статей">
+    <input type="date" name="denroj">
+    <input type="text" name="oklad" placeholder="Введите оклад">
+    <br>
+    <button type="submit">Добавить читателя</button> <br>
+    <button>
+        <a onclick="javascript:history.back(-2); return false;">Назад</a>
+    </button>
+</form>
+</body>
+</html>
+<style>
+    html *{
+        font-family: Arial !important;
+    }
+    a{
+        text-decoration: none;
+    }
+    input{
+        width: 205px;
+        height: 55px;
+        margin-top: 20px;
+        background-color: silver;
+        border-radius: 15px;
+    }
+    button{
+        font-size: 25px;
+        width: 220px;
+        height: 65px;
+        margin-top: 20px;
+        background-color: dimgray;
+        border-radius: 15px;
+    }
+</style>
